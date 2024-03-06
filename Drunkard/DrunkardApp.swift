@@ -1,6 +1,6 @@
 //
 //  DrunkardApp.swift
-//  Drunkard
+//  Drunkarduhi
 //
 //  Created by boschi nathan on 06/03/2024.
 //
