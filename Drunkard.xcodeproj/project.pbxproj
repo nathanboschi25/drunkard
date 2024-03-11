@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30BE71052B9F301D00261660 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE71042B9F301C00261660 /* HomeView.swift */; };
 		30DC075C2B98C03800EC1825 /* DrunkardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC075B2B98C03800EC1825 /* DrunkardApp.swift */; };
 		30DC075E2B98C03800EC1825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC075D2B98C03800EC1825 /* ContentView.swift */; };
 		30DC07602B98C03900EC1825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DC075F2B98C03900EC1825 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30BE71042B9F301C00261660 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		30DC07582B98C03800EC1825 /* Drunkard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drunkard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DC075B2B98C03800EC1825 /* DrunkardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkardApp.swift; sourceTree = "<group>"; };
 		30DC075D2B98C03800EC1825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		91ED45AB2B98C3E70044813B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30BE71042B9F301C00261660 /* HomeView.swift */,
 				91ED45AD2B98C4420044813B /* a.swift */,
 				91ED45B32B98C4E40044813B /* ProfileView.swift */,
 			);
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91ED45AE2B98C4420044813B /* a.swift in Sources */,
+				30BE71052B9F301D00261660 /* HomeView.swift in Sources */,
 				91ED45B22B98C45B0044813B /* abc.swift in Sources */,
 				30DC075E2B98C03800EC1825 /* ContentView.swift in Sources */,
 				91ED45B02B98C44D0044813B /* ab.swift in Sources */,
