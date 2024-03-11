@@ -3,13 +3,22 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack {
-            HStack {
-                Text("Bonjour,")
-                    .font(.title)
-                Text("Tom")
-                    .font(.title)
-                    .bold()
+            HStack{
+                HStack {
+                    Text("Bonjour,")
+                        .font(.title)
+                    Text("Tom")
+                        .font(.title)
+                        .bold()
+                }
             }
+            
+            Spacer()
+            
+            Image(uiImage: UIImage(named: "WineGlass")!)
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fit)
             
             Spacer()
 
@@ -33,11 +42,19 @@ struct HomeView: View {
                     Image(systemName: "wineglass")
                 }
                 .frame(height: 55)
-                .frame(maxWidth: 150)
+                .frame(maxWidth: 180)
                 .background(.red)
                 .foregroundColor(.white)
                 .cornerRadius(10)
             }
         }
+    }
+}
+
+
+struct HomeView_Preview: PreviewProvider
+{
+    static var previews: some View{
+        HomeView()
     }
 }
