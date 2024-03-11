@@ -30,7 +30,7 @@ struct HomeView: View {
             VStack {
                 Text("82%").font(.largeTitle).bold()
                 Text("de votre limite quotidienne")
-            }
+            }.padding(.top, 5)
 
             Spacer()
 
