@@ -12,6 +12,7 @@
 		30DC075E2B98C03800EC1825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC075D2B98C03800EC1825 /* ContentView.swift */; };
 		30DC07602B98C03900EC1825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DC075F2B98C03900EC1825 /* Assets.xcassets */; };
 		30DC07632B98C03900EC1825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30DC07622B98C03900EC1825 /* Preview Assets.xcassets */; };
+		91B79E1C2BA2009C007BA2E8 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B79E1B2BA2009B007BA2E8 /* GoalView.swift */; };
 		91ED45AE2B98C4420044813B /* a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED45AD2B98C4420044813B /* a.swift */; };
 		91ED45B02B98C44D0044813B /* ab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED45AF2B98C44D0044813B /* ab.swift */; };
 		91ED45B22B98C45B0044813B /* abc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED45B12B98C45B0044813B /* abc.swift */; };
@@ -25,6 +26,7 @@
 		30DC075D2B98C03800EC1825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30DC075F2B98C03900EC1825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30DC07622B98C03900EC1825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91B79E1B2BA2009B007BA2E8 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		91ED45AD2B98C4420044813B /* a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = a.swift; sourceTree = "<group>"; };
 		91ED45AF2B98C44D0044813B /* ab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ab.swift; sourceTree = "<group>"; };
 		91ED45B12B98C45B0044813B /* abc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abc.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				30BE71042B9F301C00261660 /* HomeView.swift */,
 				91ED45AD2B98C4420044813B /* a.swift */,
 				91ED45B32B98C4E40044813B /* ProfileView.swift */,
+				91B79E1B2BA2009B007BA2E8 /* GoalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				91ED45B02B98C44D0044813B /* ab.swift in Sources */,
 				91ED45B42B98C4E40044813B /* ProfileView.swift in Sources */,
 				30DC075C2B98C03800EC1825 /* DrunkardApp.swift in Sources */,
+				91B79E1C2BA2009C007BA2E8 /* GoalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
