@@ -12,31 +12,105 @@ struct ProfileView: View {
     @State var FieldText: String = ""
     @State private var selection = ""
     @State private var age: Int = 1
+    @State private var taille: Int = 1
+    @State private var poids: Int = 1
     
     let genders = ["Male", "Female", "Autre"]
     
     var body: some View {
         
         VStack{
+            Spacer()
+            
             Image(systemName: "person.crop.circle")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
             
-            HStack{
-                Text("Age : ")
-            }
+            Spacer()
             
             HStack{
+                Text("Age :")
+                Picker("Age ", selection: $age){
+                    ForEach(16...100, id: \.self){ age in
+                        Text("\(age) ans")
+                    }
+                }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+            
+            HStack{
+                Text("Taille : ")
+                Picker("Taille ", selection: $taille){
+                    ForEach(140...220, id: \.self){ taille in
+                        Text("\(taille) cm")
+                    }
+                }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+            
+            HStack{
+                Text("Poids : ")
+                Picker("Poids ", selection: $poids){
+                    ForEach(40...250, id: \.self){ poids in
+                        Text("\(poids) kg")
+                    }
+                }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+                
+            HStack{
                 Text("Gender :")
-                Picker("Select a gender", selection: $selection) {
-                                ForEach(genders, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                            .pickerStyle(.menu)
+                Picker("Gender", selection: $selection) {
+                    ForEach(genders, id: \.self) {
+                        Text($0)
+                    }
+                }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+            
+            
+            Spacer()
+            
+            Button {
+                print("Save Profile")
+            } label: {
+                Text("Save")
             }
+            .frame(height: 40)
+            .frame(maxWidth: 180)
+            .background(.red)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+
+            Spacer()
         }
+        .scaledToFit()
+        .frame(maxWidth: .infinity)
     }
 }
 
