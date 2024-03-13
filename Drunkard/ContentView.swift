@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("My Goal", systemImage: "star.square.fill")
                 }
-            HomeView()
+            CanIDriveView()
                 .tabItem {
                     Label("Can I drive ?", systemImage: "steeringwheel")
                 }

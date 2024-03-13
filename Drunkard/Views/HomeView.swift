@@ -47,7 +47,9 @@ struct HomeView: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
             }
+            Spacer()
         }
+    
     }
 }
 
