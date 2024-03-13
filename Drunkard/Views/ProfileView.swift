@@ -44,8 +44,6 @@ struct ProfileView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(.red, lineWidth: 1)
                     )
-                
-                
             
             HStack{
                 Text("Taille : ")
@@ -113,7 +111,6 @@ struct ProfileView: View {
         }
         .scaledToFit()
         .frame(maxWidth: .infinity)
-        
     }
 }
 
