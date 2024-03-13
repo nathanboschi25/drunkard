@@ -30,13 +30,22 @@ struct ProfileView: View {
             Spacer()
             
             HStack{
-                Text("Age : ")
+                Text("Age :")
                 Picker("Age ", selection: $age){
                     ForEach(16...100, id: \.self){ age in
                         Text("\(age) ans")
                     }
                 }
-            }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+                
+                
             
             HStack{
                 Text("Taille : ")
@@ -45,7 +54,14 @@ struct ProfileView: View {
                         Text("\(taille) cm")
                     }
                 }
-            }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
             
             HStack{
                 Text("Poids : ")
@@ -54,27 +70,50 @@ struct ProfileView: View {
                         Text("\(poids) kg")
                     }
                 }
-            }
-            
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+                
             HStack{
                 Text("Gender :")
-                Picker("Select a gender", selection: $selection) {
-                                ForEach(genders, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-            }
+                Picker("Gender", selection: $selection) {
+                    ForEach(genders, id: \.self) {
+                        Text($0)
+                    }
+                }
+            }.frame(maxWidth: .infinity)
+                .background(.ultraThickMaterial)
+                .cornerRadius(10)
+                .shadow(color: .gray, radius: 4)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.red, lineWidth: 1)
+                    )
+            
             
             Spacer()
             
             Button {
-                
+                print("Save Profile")
             } label: {
                 Text("Save")
-            }.buttonStyle(.borderedProminent)
+            }
+            .frame(height: 40)
+            .frame(maxWidth: 180)
+            .background(.red)
+            .foregroundColor(.white)
+            .cornerRadius(10)
 
             Spacer()
         }
+        .scaledToFit()
+        .frame(maxWidth: .infinity)
+        
     }
 }
 
