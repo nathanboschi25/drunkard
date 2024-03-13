@@ -10,6 +10,10 @@ import SwiftUI
 struct ProfileView: View {
     
     @State var FieldText: String = ""
+    @State private var selection = ""
+    @State private var age: Int = 1
+    
+    let genders = ["Male", "Female", "Autre"]
     
     var body: some View {
         
@@ -20,14 +24,18 @@ struct ProfileView: View {
                 .frame(width: 100, height: 100)
             
             HStack{
-                Text("Age :")
-                TextField("",text: $FieldText)
-                    .padding()
-                    .frame(width: 100, height: 45)
-                    .background(Color(.systemGray4))
-                    .cornerRadius(10)
+                
             }
             
+            HStack{
+                Text("Gender :")
+                Picker("Select a gender", selection: $selection) {
+                                ForEach(genders, id: \.self) {
+                                    Text($0)
+                                }
+                            }
+                            .pickerStyle(.menu)
+            }
         }
     }
 }
