@@ -35,7 +35,8 @@ struct ProfileView: View {
                     ForEach(16...100, id: \.self){ age in
                         Text("\(age) ans")
                     }
-                }
+                }.accentColor(.black)
+                
             }.frame(maxWidth: .infinity)
                 .background(.ultraThickMaterial)
                 .cornerRadius(10)
@@ -51,7 +52,8 @@ struct ProfileView: View {
                     ForEach(140...220, id: \.self){ taille in
                         Text("\(taille) cm")
                     }
-                }
+                }.accentColor(.black)
+                
             }.frame(maxWidth: .infinity)
                 .background(.ultraThickMaterial)
                 .cornerRadius(10)
@@ -67,7 +69,8 @@ struct ProfileView: View {
                     ForEach(40...250, id: \.self){ poids in
                         Text("\(poids) kg")
                     }
-                }
+                }.accentColor(.black)
+                
             }.frame(maxWidth: .infinity)
                 .background(.ultraThickMaterial)
                 .cornerRadius(10)
@@ -83,7 +86,8 @@ struct ProfileView: View {
                     ForEach(genders, id: \.self) {
                         Text($0)
                     }
-                }
+                }.accentColor(.black)
+                
             }.frame(maxWidth: .infinity)
                 .background(.ultraThickMaterial)
                 .cornerRadius(10)
