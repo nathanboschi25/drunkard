@@ -4,16 +4,13 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack{
-                    HStack {
-                        Text("Bonjour,")
-                            .font(.title)
-                        Text("Tom")
-                            .font(.title)
-                            .bold()
-                    }
+                HStack {
+                    Text("Bonjour,")
+                        .font(.title)
+                    Text("Tom")
+                        .font(.title)
+                        .bold()
                 }
-                
                 Spacer()
                 
                 Image(uiImage: UIImage(named: "WineGlass")!)
@@ -35,26 +32,35 @@ struct HomeView: View {
 
                 Spacer()
 
-                Button {
-                    print("Ajouter un verre")
+                NavigationLink {
+                    EmptyView()
                 } label: {
                     HStack {
                         Text("Ajouter un verre")
                         Image(systemName: "wineglass")
                     }
-                    .frame(height: 55)
-                    .frame(maxWidth: 180)
-                    .background(.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                }.padding(.bottom)
+                        .frame(height: 55)
+                        .frame(maxWidth: 180)
+                        .background(.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.bottom)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        Image(systemName: "person.crop.circle")
+                    HStack {
+                        Button{
+                            print("Share")
+                        }label: {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        
+                        NavigationLink {
+                            ProfileView()
+                        } label: {
+                            Image(systemName: "person.crop.circle.fill")
+                        }
                     }
                 }
             }

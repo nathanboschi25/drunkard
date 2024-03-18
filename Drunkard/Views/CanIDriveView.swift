@@ -55,10 +55,9 @@ struct CanIDriveView: View {
                 .foregroundColor(.white)
                 .bold()
                 .frame(height: 55)
-                .frame(maxWidth: 180)
+                .frame(maxWidth: .infinity)
                 .background(.red)
                 .foregroundColor(.white)
-                .cornerRadius(10)
                 .padding(.bottom, 20)
             
             Text("Attendez 13h45").font(.title3).bold()
