@@ -14,7 +14,7 @@ struct ContentView: View {
                 .tabItem{
                     Label("Home", systemImage: "house")
                 }
-            HomeView()
+            GoalView()
                 .tabItem {
                     Label("My Goal", systemImage: "star.square.fill")
                 }
