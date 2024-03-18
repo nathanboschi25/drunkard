@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State var FieldText: String = ""
+
     @State private var selection = ""
     @State private var age: Int = 1
     @State private var taille: Int = 1
@@ -20,12 +20,14 @@ struct ProfileView: View {
     var body: some View {
         
         VStack{
-            Spacer()
+            Text("My Profile").font(.title)
+            
             
             Image(systemName: "person.crop.circle")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
+            
             
             Spacer()
             
@@ -110,7 +112,7 @@ struct ProfileView: View {
             .background(.red)
             .foregroundColor(.white)
             .cornerRadius(10)
-
+            
             Spacer()
         }
         .scaledToFit()
