@@ -33,7 +33,7 @@ struct HomeView: View {
                 Spacer()
 
                 NavigationLink {
-                    EmptyView()
+                    AddDrinkView()
                 } label: {
                     HStack {
                         Text("Ajouter un verre")
