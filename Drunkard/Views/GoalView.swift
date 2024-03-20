@@ -35,86 +35,86 @@ struct GoalView: View {
     ]
     
     var body: some View {
-        VStack(spacing:100){
-            Text("My Goal").font(.title)
-            HStack(spacing: 80){
-                VStack(spacing:20){
-                    Text("Verres Max")
-                    Text("6").font(.title)
-                    
-                    Button {
-                        print("Edit verre goal")
-                    } label: {
-                        Text("Edit")
-                    }
-                    .frame(height: 30)
-                    .frame(maxWidth: 100)
-                    .background(.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-
-                }.frame(maxWidth: 120, maxHeight: 150)
-                .foregroundColor(.white)
-                    .background(Color.red)
-                    .cornerRadius(10)
-                    
-                
-                VStack(spacing:20){
-                    Text("Taux Max")
-                    Text("1.5 g/L").font(.title)
-                    
-                    Button {
-                        print("Edit taux goal")
-                    } label: {
-                        Text("Edit")
-                    }
-                    .frame(height: 30)
-                    .frame(maxWidth: 100)
-                    .background(.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    
-                }.frame(maxWidth: 120, maxHeight: 150)
-                    .foregroundColor(.white)
+        NavigationView(){
+            VStack(spacing:100){
+                Text("My Goal").font(.title)
+                HStack(spacing: 80){
+                    VStack(spacing:20){
+                        Text("Glass Max")
+                        Text("6").font(.title)
+                        
+                        NavigationLink {
+                            EditGoalGlassView()
+                        } label: {
+                            Text("Edit")
+                        }
+                        .frame(height: 30)
+                        .frame(maxWidth: 100)
+                        .background(.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        
+                    }.frame(maxWidth: 120, maxHeight: 150)
+                        .foregroundColor(.white)
                         .background(Color.red)
                         .cornerRadius(10)
-                
-            }
+                    
+                    
+                    VStack(spacing:20){
+                        Text("Level Max")
+                        Text("1.5 g/L").font(.title)
                         
-            TabView{
-                Chart {
-                    ForEach(linePointsVerre) { point in
-                        Plot {
-                            LineMark(
-                                x: .value("Date", point.x),
-                                y: .value("Level", point.y)
-                            )
-                            PointMark(x: .value("Date", point.x), y: .value("Level", point.y))
+                        NavigationLink {
+                            EditGoalLevelView()
+                        } label: {
+                            Text("Edit")
                         }
-                    }
-                    RuleMark(y: .value("Verre max", 6)).foregroundStyle(.red).blur(radius: 2)
-                }.frame(maxHeight: 160).padding(.horizontal, 30)
+                        .frame(height: 30)
+                        .frame(maxWidth: 100)
+                        .background(.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        
+                    }.frame(maxWidth: 120, maxHeight: 150)
+                        .foregroundColor(.white)
+                        .background(Color.red)
+                        .cornerRadius(10)
+                    
+                }
                 
-                Chart {
-                    ForEach(linePointsTaux) { point in
-                        Plot {
-                            LineMark(
-                                x: .value("Date", point.x),
-                                y: .value("Level", point.y)
-                            )
-                            PointMark(x: .value("Date", point.x), y: .value("Level", point.y))
+                TabView{
+                    Chart {
+                        ForEach(linePointsVerre) { point in
+                            Plot {
+                                LineMark(
+                                    x: .value("Date", point.x),
+                                    y: .value("Level", point.y)
+                                )
+                                PointMark(x: .value("Date", point.x), y: .value("Level", point.y))
+                            }
                         }
-                    }
-                    RuleMark(y: .value("Taux max", 1.5)).foregroundStyle(.red).blur(radius: 2)
-                }.frame(maxHeight: 160).padding(.horizontal, 30)
+                        RuleMark(y: .value("Verre max", 6)).foregroundStyle(.red).blur(radius: 2)
+                    }.frame(maxHeight: 160).padding(.horizontal, 30)
+                    
+                    Chart {
+                        ForEach(linePointsTaux) { point in
+                            Plot {
+                                LineMark(
+                                    x: .value("Date", point.x),
+                                    y: .value("Level", point.y)
+                                )
+                                PointMark(x: .value("Date", point.x), y: .value("Level", point.y))
+                            }
+                        }
+                        RuleMark(y: .value("Taux max", 1.5)).foregroundStyle(.red).blur(radius: 2)
+                    }.frame(maxHeight: 160).padding(.horizontal, 30)
+                    
+                }.tabViewStyle(.page)
                 
-            }.tabViewStyle(.page)
-
+            }.scaledToFit()
+                .frame(maxWidth: .infinity)
             
-            
-        }.scaledToFit()
-            .frame(maxWidth: .infinity)
-            
+        }
     }
 }
 
