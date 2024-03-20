@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
 
-    @State private var selection = ""
+    @State private var gender = ""
     @State private var age: Int = 1
     @State private var taille: Int = 1
     @State private var poids: Int = 1
@@ -84,7 +84,7 @@ struct ProfileView: View {
                 
             HStack{
                 Text("Gender :")
-                Picker("Gender", selection: $selection) {
+                Picker("Gender", selection: $gender) {
                     ForEach(genders, id: \.self) {
                         Text($0)
                     }
