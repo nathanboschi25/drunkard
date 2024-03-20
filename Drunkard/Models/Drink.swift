@@ -1,20 +1,11 @@
 //
-//  DrinkModel.swift
+//  Drink.swift
 //  Drunkard
 //
-//  Created by boschi nathan on 18/03/2024.
+//  Created by boschi nathan on 20/03/2024.
 //
 
 import Foundation
-
-struct Drink: Identifiable {
-    var id: ObjectIdentifier
-    
-    var datetime: Date
-    
-    var volume: DrinkVolume
-    var level: Int
-}
 
 enum DrinkVolume: Double, CaseIterable {
     case shot = 3
@@ -24,4 +15,12 @@ enum DrinkVolume: Double, CaseIterable {
     case liter = 100
     case cubitainer = 500
     case barrel = 1600
+}
+
+
+struct Drink: Identifiable {
+    var id = UUID()
+    var dateTime: Date
+    var vol: DrinkVolume
+    var level: Double
 }
