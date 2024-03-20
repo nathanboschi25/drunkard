@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddDrinkView: View {
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
+    
     @State private var datetime = Date.now
     @State private var volume: DrinkVolume = .wine
     @State private var level: Double = 12.5
@@ -45,7 +47,7 @@ struct AddDrinkView: View {
             }.listStyle(.plain).scrollDisabled(true)
             Spacer()
             Button() {
-                
+                drinkViewModel.addDrink(datetime: datetime, vol: volume, level: level)
             } label: {
                 Text("Add drink").frame(height: 45)
                     .frame(maxWidth: 120)
