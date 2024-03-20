@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30AAF9552BAB32140011E0B9 /* AddDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AAF9542BAB32140011E0B9 /* AddDrinkView.swift */; };
+		30AAF9582BAB32260011E0B9 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AAF9562BAB32260011E0B9 /* Drink.swift */; };
 		30BE71052B9F301D00261660 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE71042B9F301C00261660 /* HomeView.swift */; };
 		30DC075C2B98C03800EC1825 /* DrunkardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC075B2B98C03800EC1825 /* DrunkardApp.swift */; };
 		30DC075E2B98C03800EC1825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC075D2B98C03800EC1825 /* ContentView.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30AAF9542BAB32140011E0B9 /* AddDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrinkView.swift; sourceTree = "<group>"; };
+		30AAF9562BAB32260011E0B9 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		30BE71042B9F301C00261660 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		30DC07582B98C03800EC1825 /* Drunkard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drunkard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DC075B2B98C03800EC1825 /* DrunkardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkardApp.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		91ED45AA2B98C3CF0044813B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				30AAF9562BAB32260011E0B9 /* Drink.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		91ED45AB2B98C3E70044813B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30AAF9542BAB32140011E0B9 /* AddDrinkView.swift */,
 				30BE71042B9F301C00261660 /* HomeView.swift */,
 				91ED45AD2B98C4420044813B /* a.swift */,
 				91ED45B32B98C4E40044813B /* ProfileView.swift */,
@@ -192,8 +198,10 @@
 				30DC075E2B98C03800EC1825 /* ContentView.swift in Sources */,
 				91ED45B42B98C4E40044813B /* ProfileView.swift in Sources */,
 				30DDDF302BA1F24400806E0C /* CanIDriveView.swift in Sources */,
+				30AAF9552BAB32140011E0B9 /* AddDrinkView.swift in Sources */,
 				30DC075C2B98C03800EC1825 /* DrunkardApp.swift in Sources */,
 				914FDC2B2BAB2A5400D657AA /* EditGoalGlassView.swift in Sources */,
+				30AAF9582BAB32260011E0B9 /* Drink.swift in Sources */,
 				91B79E1C2BA2009C007BA2E8 /* GoalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

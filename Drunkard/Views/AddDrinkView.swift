@@ -38,7 +38,7 @@ struct AddDrinkView: View {
                     HStack {
                         Text("Drink alcohol level")
                         Spacer()
-                        Text("\(level)")
+                        Text("\(level, specifier: "%.1f")°")
                     }
                     Slider(value: $level, in: 0...50, step: 0.5)
                 }
