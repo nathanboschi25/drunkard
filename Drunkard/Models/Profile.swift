@@ -16,6 +16,7 @@ enum Gender: String, CaseIterable {
 struct Profile: Identifiable {
     var id = UUID()
     var nom: String
+    var age: Int
     var taille: Int
     var poids: Int
     var genre: Gender

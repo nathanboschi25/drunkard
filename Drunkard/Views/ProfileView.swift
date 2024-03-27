@@ -9,15 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @EnvironmentObject var profileViewModel: ProfileViewModel
 
-    @State private var gender = ""
-    @State private var age: Int = 1
-    @State private var taille: Int = 1
-    @State private var poids: Int = 1
-    @State private var name = ""
-    
-    let genders = ["Male", "Female", "Other"]
-    
     var body: some View {
         
         VStack{
@@ -29,16 +22,17 @@ struct ProfileView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
             
-            TextField("Entrez votre nom", text: $name)
+            TextField("Entrez votre nom", text: $profileViewModel.profile.nom)
                     .multilineTextAlignment(.center)
                     .padding(.top)
+                    
             
             Spacer()
 
             
             HStack{
                 Text("Age :")
-                Picker("Age ", selection: $age){
+                Picker("Age ", selection: $profileViewModel.profile.age){
                     ForEach(16...100, id: \.self){ age in
                         Text("\(age) ans")
                     }
@@ -55,7 +49,7 @@ struct ProfileView: View {
             
             HStack{
                 Text("Taille : ")
-                Picker("Taille ", selection: $taille){
+                Picker("Taille ", selection: $profileViewModel.profile.taille){
                     ForEach(140...220, id: \.self){ taille in
                         Text("\(taille) cm")
                     }
@@ -72,7 +66,7 @@ struct ProfileView: View {
             
             HStack{
                 Text("Poids : ")
-                Picker("Poids ", selection: $poids){
+                Picker("Poids ", selection: $profileViewModel.profile.poids){
                     ForEach(40...250, id: \.self){ poids in
                         Text("\(poids) kg")
                     }
@@ -88,10 +82,10 @@ struct ProfileView: View {
                     )
                 
             HStack{
-                Text("Gender :")
-                Picker("Gender", selection: $gender) {
-                    ForEach(genders, id: \.self) {
-                        Text($0)
+                Text("Genre :")
+                Picker("Genre", selection: $profileViewModel.profile.genre) {
+                    ForEach(Gender.allCases, id: \.self) { gender in
+                        Text(gender.rawValue).tag(gender.hashValue)
                     }
                 }.accentColor(.black)
                 
@@ -106,17 +100,7 @@ struct ProfileView: View {
             
             
             Spacer()
-            
-            Button {
-                print("Save Profile")
-            } label: {
-                Text("Save")
-            }
-            .frame(height: 40)
-            .frame(maxWidth: 180)
-            .background(.red)
-            .foregroundColor(.white)
-            .cornerRadius(10)
+
             
         }
         .scaledToFit()
@@ -126,6 +110,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView().environmentObject(ProfileViewModel())
     }
 }
