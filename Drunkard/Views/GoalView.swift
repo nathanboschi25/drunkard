@@ -14,14 +14,11 @@ func date(year: Int, month: Int, day: Int = 1) -> Date {
 
 struct GoalView: View {
     
+    @EnvironmentObject var profileViewModel: ProfileViewModel
+
+    
     private var linePointsVerre: [VerreMax] = [
-        VerreMax(x: date(year: 2023, month: 10, day: 2), y: 4),
-        VerreMax(x: date(year: 2023, month: 10, day: 3), y: 5),
-        VerreMax(x: date(year: 2023, month: 10, day: 4), y: 2),
-        VerreMax(x: date(year: 2023, month: 10, day: 5), y: 7),
-        VerreMax(x: date(year: 2023, month: 10, day: 6), y: 4),
-        VerreMax(x: date(year: 2023, month: 10, day: 7), y: 8),
-        VerreMax(x: date(year: 2023, month: 10, day: 8), y: 2),
+        VerreMax(x: Date(), y:2),
     ]
     
     private var linePointsTaux: [TauxMax] = [
@@ -41,7 +38,7 @@ struct GoalView: View {
                 HStack(spacing: 80){
                     VStack(spacing:20){
                         Text("Glass Max")
-                        Text("6").font(.title)
+                        Text(" \(profileViewModel.profile.drinksLimit)").font(.title)
                         
                         NavigationLink {
                             EditGoalGlassView()
@@ -62,7 +59,7 @@ struct GoalView: View {
                     
                     VStack(spacing:20){
                         Text("Level Max")
-                        Text("1.5 g/L").font(.title)
+                        Text(String(format: "%.2f g/L", profileViewModel.profile.levelLimit)).font(.title)
                         
                         NavigationLink {
                             EditGoalLevelView()
@@ -132,6 +129,6 @@ struct TauxMax: Identifiable {
 
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView()
+        GoalView().environmentObject(ProfileViewModel())
     }
 }
