@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditGoalGlassView: View {
     
-    @State private var numberGlass = 0
+    @State private var numberGlass: Int = 0
     @Environment(\.presentationMode) var presentationMode
 
     
