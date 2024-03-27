@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
+    @EnvironmentObject var profileViewModel: ProfileViewModel
     var body: some View {
         NavigationView {
             VStack {
@@ -21,12 +23,12 @@ struct HomeView: View {
                 Spacer()
 
                 HStack(alignment: .firstTextBaseline) {
-                    Text("5").font(.title).bold()
+                    Text("\(drinkViewModel.getTodayDrinksCount())").font(.title).bold()
                     Text("verres bus aujourd'hui")
                 }
 
                 VStack {
-                    Text("82%").font(.largeTitle).bold()
+                    Text(String(format: "%.1f", Double(drinkViewModel.getTodayDrinksCount())/Double(profileViewModel.profile.drinksLimit)*100) + " %").font(.largeTitle).bold()
                     Text("de votre limite quotidienne")
                 }.padding(.top, 5)
 
@@ -72,6 +74,6 @@ struct HomeView: View {
 struct HomeView_Preview: PreviewProvider
 {
     static var previews: some View{
-        HomeView()
+        HomeView().environmentObject(DrinkViewModel()).environmentObject(ProfileViewModel())
     }
 }

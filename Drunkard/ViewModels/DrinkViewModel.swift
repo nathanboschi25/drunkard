@@ -21,4 +21,11 @@ class DrinkViewModel: ObservableObject {
     func moveItem(from: IndexSet, to: Int) {
         drinks.move(fromOffsets: from, toOffset: to)
     }
+    
+    func getTodayDrinksCount() -> Int {
+        let today = Date()
+        return drinks.filter {
+            Calendar.current.isDate($0.dateTime, inSameDayAs: today)
+        }.count
+    }
 }

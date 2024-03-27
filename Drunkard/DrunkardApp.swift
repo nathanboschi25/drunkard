@@ -13,6 +13,7 @@ struct DrunkardApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(ProfileViewModel())
+                .environmentObject(DrinkViewModel())
         }
     }
 }
