@@ -9,7 +9,8 @@ import SwiftUI
 
 struct EditGoalLevelView: View {
     
-    @State private var numberGlass: Double = 0.0
+    @EnvironmentObject var profileViewModel: ProfileViewModel
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -24,49 +25,39 @@ struct EditGoalLevelView: View {
                     .aspectRatio(contentMode: .fit)
                 
                 VStack {
-                    Text(String(format: "%.2f g/L", numberGlass))
+                    Text(String(format: "%.2f g/L", profileViewModel.profile.levelLimit))
                         .font(.title)
 
                     
                     HStack {
                         Button(action: {
-                            if numberGlass > 0 {
-                                numberGlass -= 0.25
+                            if profileViewModel.profile.levelLimit > 0 {
+                                profileViewModel.profile.levelLimit -= 0.25
                             }
                         }) {
                             Image(systemName: "minus.circle")
                                 .font(.largeTitle)
                                 .foregroundColor(.red)
                         }
-                        .disabled(numberGlass == 0)
+                        .disabled(profileViewModel.profile.levelLimit == 0)
                         
                         
                         Button(action: {
-                            if numberGlass < 5 {
-                                numberGlass += 0.25
+                            if profileViewModel.profile.levelLimit < 5 {
+                                profileViewModel.profile.levelLimit += 0.25
                             }
                         }) {
                             Image(systemName: "plus.circle")
                                 .font(.largeTitle)
                                 .foregroundColor(.red)
                         }
-                        .disabled(numberGlass == 5)
+                        .disabled(profileViewModel.profile.levelLimit == 5)
                     }
                     .padding()
                 }
                 .background(Color.white)
                 .edgesIgnoringSafeArea(.all)
                 
-                Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Edit")
-                    }.frame(height: 55)
-                    .frame(maxWidth: 180)
-                    .background(.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.bottom)
             }
         }
     }
@@ -74,6 +65,6 @@ struct EditGoalLevelView: View {
 
 struct EditGoalLevelView_Previews: PreviewProvider {
     static var previews: some View {
-        EditGoalLevelView()
+        EditGoalLevelView().environmentObject(ProfileViewModel())
     }
 }
