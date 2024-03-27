@@ -14,8 +14,9 @@ struct ProfileView: View {
     @State private var age: Int = 1
     @State private var taille: Int = 1
     @State private var poids: Int = 1
+    @State private var name = ""
     
-    let genders = ["Male", "Female", "Autre"]
+    let genders = ["Male", "Female", "Other"]
     
     var body: some View {
         
@@ -28,8 +29,12 @@ struct ProfileView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
             
+            TextField("Entrez votre nom", text: $name)
+                    .multilineTextAlignment(.center)
+                    .padding(.top)
             
             Spacer()
+
             
             HStack{
                 Text("Age :")
@@ -113,7 +118,6 @@ struct ProfileView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
             
-            Spacer()
         }
         .scaledToFit()
         .frame(maxWidth: .infinity)
