@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30979D492BB4617A00CB3123 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30979D482BB4617A00CB3123 /* Profile.swift */; };
+		30979D4B2BB4624300CB3123 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30979D4A2BB4624300CB3123 /* ProfileViewModel.swift */; };
 		30AAF9552BAB32140011E0B9 /* AddDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AAF9542BAB32140011E0B9 /* AddDrinkView.swift */; };
 		30AAF9582BAB32260011E0B9 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AAF9562BAB32260011E0B9 /* Drink.swift */; };
 		30AAF95B2BAB33910011E0B9 /* DrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AAF95A2BAB33910011E0B9 /* DrinkViewModel.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30979D482BB4617A00CB3123 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		30979D4A2BB4624300CB3123 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		30AAF9542BAB32140011E0B9 /* AddDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDrinkView.swift; sourceTree = "<group>"; };
 		30AAF9562BAB32260011E0B9 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		30AAF95A2BAB33910011E0B9 /* DrinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				30AAF9562BAB32260011E0B9 /* Drink.swift */,
+				30979D482BB4617A00CB3123 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				30AAF95A2BAB33910011E0B9 /* DrinkViewModel.swift */,
+				30979D4A2BB4624300CB3123 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30BE71052B9F301D00261660 /* HomeView.swift in Sources */,
+				30979D492BB4617A00CB3123 /* Profile.swift in Sources */,
 				914FDC2D2BAB2D1400D657AA /* EditGoalLevelView.swift in Sources */,
 				30DC075E2B98C03800EC1825 /* ContentView.swift in Sources */,
 				91ED45B42B98C4E40044813B /* ProfileView.swift in Sources */,
@@ -197,6 +204,7 @@
 				30DC075C2B98C03800EC1825 /* DrunkardApp.swift in Sources */,
 				914FDC2B2BAB2A5400D657AA /* EditGoalGlassView.swift in Sources */,
 				30AAF9582BAB32260011E0B9 /* Drink.swift in Sources */,
+				30979D4B2BB4624300CB3123 /* ProfileViewModel.swift in Sources */,
 				30AAF95B2BAB33910011E0B9 /* DrinkViewModel.swift in Sources */,
 				91B79E1C2BA2009C007BA2E8 /* GoalView.swift in Sources */,
 			);
